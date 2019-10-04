@@ -1,0 +1,124 @@
+* {
+  font-size: 1.1rem;
+}
+
+html, body {
+  min-height: 100%;
+  background: #ECECEC;
+}
+
+.App {
+  text-align: center;
+  margin: auto;
+  max-width: 350px;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 19px 2px rgba(173,173,173,1);
+  -moz-box-shadow: 0px 0px 19px 2px rgba(173,173,173,1);
+  box-shadow: 0px 0px 19px 2px rgba(173,173,173,1);
+  border-radius: 10px;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* header section */
+
+.header {
+  background: #009BD1;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-content: left;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.critterIcon {
+  width: 45%;
+  height: auto;
+}
+
+/* main section */
+
+.main {
+  max-width: 500px;
+  padding: 0 2rem;
+}
+
+.critterPlant {
+  max-width: 75%;
+  height: auto;
+}
+
+.form-control {
+  margin: 1rem auto;
+}
+
+button {
+  background: #009BD1 !important;
+  border: none !important;
+  border-radius: 1rem !important;
+}
+
+input {
+  background: white !important;
+  border-radius: 1rem !important;
+}
+
+/* sign in section */
+.sign-in {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sign-in p {
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.sign-in button {
+  font-size: 0.9rem;
+}
+
+/* Login Page */
+.login {
+  padding: 0 2rem;
+  padding-top: 7rem;
+  max-width: 500px;
+}
+
+/* Create a Goal Page */
+.createAGoal {
+  padding: 0 2rem;
+  padding-top: 3rem;
+  max-width: 500px;
+}
+
+.firstInput {
+  width: 75px;
+}
+
+.secondInput {
+  width: 125px;
+}
+
+.thirdInput {
+  width: 175px;
+}
+
+/* Meet Pet Page */
+/* .meetPet {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+  padding-top: 7rem;
+  max-width: 500px;
+} */
