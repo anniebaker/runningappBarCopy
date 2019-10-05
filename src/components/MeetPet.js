@@ -27,12 +27,18 @@ class MeetPet extends React.Component {
   logRun = (addGoal) => {
     let newProg = 0;
     let newPerc = 0;
-    if ((this.state.progress + addGoal) < this.state.goal) {
+    let midpoint = this.state.goal / 2;
+    console.log(midpoint);
+    if ((this.state.progress + addGoal) === midpoint) {
+      console.log("what");
       newProg = this.state.progress + addGoal;
       newPerc = ((newProg / this.state.goal) * 100);
       this.setState({ percentage: newPerc })
-    } else if ((this.state.progress + addGoal) < (this.state.goal / 2)) {
       this.setState({ imgSrc: critterGrown })
+    } else if ((this.state.progress + addGoal) < this.state.goal) {
+      newProg = this.state.progress + addGoal;
+      newPerc = ((newProg / this.state.goal) * 100);
+      this.setState({ percentage: newPerc })
     } else {
       newProg = this.state.goal;
       newPerc = 100;
@@ -74,10 +80,10 @@ class MeetPet extends React.Component {
 
         <SetGoal setGoal={this.setGoal} />
         <LogRun logRun={this.logRun} />
+        <img src={this.state.imgSrc} alt='critter'></img>
         <div className="progress-bar">
           <Filler percentage={this.state.percentage} />
         </div>
-        <img src={this.state.imgSrc} alt='critter'></img>
         <span>You've met {this.state.percentage}% of your goal</span>
         <div>{this.goalMet()}</div>
 

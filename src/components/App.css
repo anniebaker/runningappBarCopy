@@ -14,3 +14,10 @@
   border-radius: inherit;
   transition: width .2s ease-in;
 }
+
+.goalBar {
+  width: 80px;
+  height: 0px;
+  padding: .9em;
+  text-align: center;
+}

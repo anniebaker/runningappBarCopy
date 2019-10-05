@@ -1,4 +1,5 @@
 import React from 'react';
+import { restElement } from '@babel/types';
 
 class SetGoal extends React.Component {
     constructor(props) {
@@ -7,13 +8,22 @@ class SetGoal extends React.Component {
             goal: 0,
         }
     }
+    handleSubmit = (event) => {
+        this.props.setGoal(this.state.goal);
+        //event.target.value = 0;
+        this.setState({
+            goal: 0,
+        });
+    }
 
     render() {
         return (
             <div>
                 <form onSubmit={(event) => {
-                    this.props.setGoal(this.state.goal);
+                    this.handleSubmit(event);
+                    this.setState({ goal: 0, })
                     event.preventDefault();
+
                 }
                 }
                     onChange={(event) => {
@@ -22,6 +32,7 @@ class SetGoal extends React.Component {
                     }}>
 
                     <input
+                        className="goalBar"
                         type="text"
                         name="goal"
                     />
