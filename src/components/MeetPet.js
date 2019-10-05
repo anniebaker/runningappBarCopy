@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import Filler from './Filler';
 //import LogRun from './LogRun';
 import SetGoal from './SetGoal';
+import LogRun from './LogRun';
 import critter from './images/critter-transparent-bg-08.png';
+// import critterMid from 
 import critterGrown from './images/critter-transparent-bg-07.png';
 import './App.css';
 
@@ -29,6 +31,8 @@ class MeetPet extends React.Component {
       newProg = this.state.progress + addGoal;
       newPerc = ((newProg / this.state.goal) * 100);
       this.setState({ percentage: newPerc })
+    } else if ((this.state.progress + addGoal) < (this.state.goal / 2)) {
+      this.setState({ imgSrc: critterGrown })
     } else {
       newProg = this.state.goal;
       newPerc = 100;
@@ -53,23 +57,23 @@ class MeetPet extends React.Component {
   render() {
     return (
       <div className="meetPet">
-        <Link to={{
+        {/* <Link to={{
           pathname: "/logarun",
           state: {
             logRun: this.logRun
           }
         }} >
           <button>Log a Run</button>
-        </Link>
+        </Link> */}
 
-        <Link to={{
+        {/* <Link to={{
           pathname: "/logarun",
         }} >
           <button>Log a Run</button>
-        </Link>
+        </Link> */}
 
         <SetGoal setGoal={this.setGoal} />
-        {/* <LogRun logRun={this.logRun} /> */}
+        <LogRun logRun={this.logRun} />
         <div className="progress-bar">
           <Filler percentage={this.state.percentage} />
         </div>
